@@ -1,0 +1,289 @@
+//
+//  DataStoreTests.swift
+//  JustPersist
+//
+//  Created by Alberto De Bortoli on 25/10/2016.
+//  Copyright © 2016 JUST EAT. All rights reserved.
+//
+
+import XCTest
+@testable import JustPersist
+@testable import JustPersist_Example
+
+struct DataStoreTestsConsts {
+    static let UnitTestTimeout = 5.0
+}
+
+class DataStoreTests: XCTestCase {
+    
+    var magicalRecordDataStore: DataStore!
+    var skopelosDataStore: DataStore!
+    var magicalRecordChildDataStore: ChildDataStore!
+    var skopelosChildDataStore: ChildDataStore!
+    
+    override func setUp() {
+        super.setUp()
+        
+        if let modelURL = Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd") {
+            magicalRecordDataStore = MagicalRecordDataStore.inMemoryStack() { error in }
+            skopelosDataStore = SkopelosDataStore(inMemoryStack: modelURL) { error in }
+        }
+        
+        magicalRecordDataStore.setup()
+        magicalRecordChildDataStore = magicalRecordDataStore.makeChildDataStore()
+        magicalRecordChildDataStore.setup()
+        
+        skopelosDataStore.setup()
+        skopelosChildDataStore = skopelosDataStore.makeChildDataStore()
+        skopelosChildDataStore.setup()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        magicalRecordDataStore.tearDown()
+        magicalRecordChildDataStore.tearDown()
+        skopelosDataStore.tearDown()
+        skopelosChildDataStore.tearDown()
+    }
+    
+    // MARK: Magical Record
+    // MARK: Readings
+    
+    func testReadInMagicalRecordDataStoreFromMainThreadIsSyncOnMainThread() {
+        testReadCalledFromMainThreadIsSyncOnMainThread(magicalRecordDataStore)
+    }
+    
+    func testReadInMagicalRecordDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testReadCalledFromBkgThreadIsSyncOnMainThread(magicalRecordDataStore)
+    }
+    
+    func testReadInMagicalRecordChilDataStoreFromMainThreadIsSyncOnMainThread() {
+        testReadCalledFromMainThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+    }
+    
+    func testReadInMagicalRecordChildDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testReadCalledFromBkgThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+    }
+    
+    // MARK: Writings Sync
+    
+    func testWriteSyncInMagicalRecordDataStoreFromMainThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(magicalRecordDataStore)
+    }
+    
+    func testWriteSyncInMagicalRecordDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(magicalRecordDataStore)
+    }
+    
+    func testWriteSyncInMagicalRecordChildDataStoreFromMainThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+    }
+    
+    func testWriteSyncInMagicalRecordChildDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(magicalRecordChildDataStore)
+    }
+    
+    // MARK: Writings Async
+    
+    func testWriteAsyncInMagicalRecordDataStoreFromMainThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+    }
+    
+    func testWriteAsyncInMagicalRecordDataStoreFromBkgThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+    }
+    
+    func testWriteAsyncInMagicalRecordChildDataStoreFromMainThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordChildDataStore)
+    }
+    
+    func testWriteAsyncInMagicalRecordChildDataStoreFromBkgThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(magicalRecordChildDataStore)
+    }
+    
+    // MARK: Skopelos
+    // MARK: Readings
+    
+    func testReadInSkopelosDataStoreFromMainThreadIsSyncOnMainThread() {
+        testReadCalledFromMainThreadIsSyncOnMainThread(magicalRecordDataStore)
+    }
+    
+    func testReadInSkopelosDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testReadCalledFromBkgThreadIsSyncOnMainThread(magicalRecordDataStore)
+    }
+    
+    func testReadInSkopelosChilDataStoreFromMainThreadIsSyncOnMainThread() {
+        testReadCalledFromMainThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+    }
+    
+    func testReadInSkopelosChildDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testReadCalledFromBkgThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+    }
+    
+    // MARK: Writings Sync
+    
+    func testWriteSyncInSkopelosDataStoreFromMainThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(magicalRecordDataStore)
+    }
+    
+    func testWriteSyncInSkopelosDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(magicalRecordDataStore)
+    }
+    
+    func testWriteSyncInSkopelosChildDataStoreFromMainThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+    }
+    
+    func testWriteSyncInSkopelosChildDataStoreFromBkgThreadIsSyncOnMainThread() {
+        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(magicalRecordChildDataStore)
+    }
+    
+    // MARK: Writings Async
+    
+    func testWriteAsyncInSkopelosDataStoreFromMainThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+    }
+    
+    func testWriteAsyncInSkopelosDataStoreFromBkgThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+    }
+    
+    func testWriteAsyncInSkopelosChildDataStoreFromMainThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordChildDataStore)
+    }
+    
+    func testWriteAsyncInSkopelosChildDataStoreFromBkgThreadIsAsyncOnBackgroundThread() {
+        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(magicalRecordChildDataStore)
+    }
+    
+    // MARK: Private
+    
+    fileprivate func testReadCalledFromMainThreadIsSyncOnMainThread(_ dataStore: DataStore) {
+        
+        var stepSequence: [Int] = []
+        
+        dataStore.read { accessor in
+            
+            XCTAssertTrue(Thread.current.isMainThread)
+            stepSequence.append(0)
+        }
+        
+        stepSequence.append(1)
+        
+        XCTAssertEqual(stepSequence[0], 0)
+        XCTAssertEqual(stepSequence[1], 1)
+    }
+    
+    fileprivate func testWriteSyncCalledFromMainThreadIsSyncOnMainThread(_ dataStore: DataStore) {
+        
+        var stepSequence: [Int] = []
+        
+        dataStore.writeSync { accessor in
+            
+            XCTAssertTrue(Thread.current.isMainThread)
+            stepSequence.append(0)
+        }
+        
+        stepSequence.append(1)
+        
+        XCTAssertEqual(stepSequence[0], 0)
+        XCTAssertEqual(stepSequence[1], 1)
+        
+    }
+    
+    fileprivate func testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(_ dataStore: DataStore) {
+        
+        let asyncExpectation = expectation(description: "thread safety expectation")
+        
+        /**
+        * stepSuquence logic is commented-out as the execution of the block (ultimately a 'performBlock'/'perform' in CoreData
+        * is not guaranteed to happen on a dispatched block and might be executed before the line following the block
+        */
+        //var stepSequence: [Int] = []
+        
+        dataStore.writeAsync { accessor in
+            
+            XCTAssertFalse(Thread.current.isMainThread)
+            //stepSequence.append(0)
+            asyncExpectation.fulfill()
+        }
+        
+        //stepSequence.append(1)
+        self.waitForExpectations(timeout: DataStoreTestsConsts.UnitTestTimeout) { error in }
+        
+        //XCTAssertEqual(stepSequence[0], 1)
+        //XCTAssertEqual(stepSequence[1], 0)
+        
+    }
+    
+    fileprivate func testReadCalledFromBkgThreadIsSyncOnMainThread(_ dataStore: DataStore) {
+        
+        let asyncExpectation = expectation(description: "thread safety expectation")
+        var stepSequence: [Int] = []
+        
+        DispatchQueue(label: "com.JustPersist.DataStoreTests", attributes: []).async {
+            
+            dataStore.read { accessor in
+                
+                XCTAssertTrue(Thread.current.isMainThread)
+                stepSequence.append(0)
+            }
+            
+            stepSequence.append(1)
+            asyncExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: DataStoreTestsConsts.UnitTestTimeout) { error in }
+        
+        XCTAssertEqual(stepSequence[0], 0)
+        XCTAssertEqual(stepSequence[1], 1)
+    }
+    
+    fileprivate func testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(_ dataStore: DataStore) {
+        
+        let asyncExpectation = expectation(description: "thread safety expectation")
+        var stepSequence: [Int] = []
+        
+        DispatchQueue(label: "com.JustPersist.DataStoreTests", attributes: []).async {
+            
+            dataStore.writeSync { accessor in
+                
+                XCTAssertFalse(Thread.current.isMainThread)
+                stepSequence.append(0)
+            }
+            
+            stepSequence.append(1)
+            asyncExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: DataStoreTestsConsts.UnitTestTimeout) { error in }
+        
+        XCTAssertEqual(stepSequence[0], 0)
+        XCTAssertEqual(stepSequence[1], 1)
+        
+    }
+    
+    fileprivate func testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(_ dataStore: DataStore) {
+        
+        let asyncExpectation = expectation(description: "thread safety expectation")
+        var stepSequence: [Int] = []
+        
+        DispatchQueue(label: "com.JustPersist.DataStoreTests", attributes: []).async {
+            
+            dataStore.writeAsync { accessor in
+                
+                XCTAssertFalse(Thread.current.isMainThread)
+                stepSequence.append(0)
+                asyncExpectation.fulfill()
+            }
+            
+            stepSequence.append(1)
+        }
+        
+        self.waitForExpectations(timeout: DataStoreTestsConsts.UnitTestTimeout) { error in }
+        
+        XCTAssertEqual(stepSequence[0], 1)
+        XCTAssertEqual(stepSequence[1], 0)
+        
+    }
+}

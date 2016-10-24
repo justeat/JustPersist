@@ -1,0 +1,6 @@
+framework module Pods_JustPersist_watchOS_Example_Extension {
+  umbrella header "Pods-JustPersist_watchOS_Example Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}

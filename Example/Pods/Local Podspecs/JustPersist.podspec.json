@@ -1,0 +1,55 @@
+{
+  "name": "JustPersist",
+  "version": "0.1.0",
+  "summary": "The way we do persistence on iOS at Just Eat",
+  "description": "The way we do persistence on iOS at Just Eat. Including wrappers around Skopelos and MagicalRecord.",
+  "homepage": "https://github.com/justeat/JustPersist",
+  "license": {
+    "type": "Apache 2.0",
+    "file": "LICENSE"
+  },
+  "authors": "Just Eat",
+  "source": {
+    "git": "https://github.com/justeat/JustPersist.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "watchos": "3.0"
+  },
+  "frameworks": [
+    "Foundation",
+    "CoreData"
+  ],
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "JustPersist/Classes/Core/**/*"
+    },
+    {
+      "name": "Skopelos",
+      "dependencies": {
+        "JustPersist/Core": [
+
+        ],
+        "Skopelos": [
+          "2.0.0"
+        ]
+      },
+      "source_files": "JustPersist/Classes/Wrappers/Skopelos/*"
+    },
+    {
+      "name": "MagicalRecord",
+      "dependencies": {
+        "JustPersist/Core": [
+
+        ],
+        "MagicalRecord": [
+          "~> 2.3.2"
+        ]
+      },
+      "source_files": "JustPersist/Classes/Wrappers/MagicalRecord/*"
+    }
+  ]
+}
