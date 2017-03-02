@@ -3,9 +3,9 @@
 # JustPersist
 
 [![Build Status](https://www.bitrise.io/app/2a464ef14bd688df.svg?token=G_Hb4MMemkknV4YcCD4CsA&branch=develop)](https://www.bitrise.io/app/2a464ef14bd688df)
-[![Version](https://img.shields.io/cocoapods/v/JustLog.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
-[![License](https://img.shields.io/cocoapods/l/JustLog.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
-[![Platform](https://img.shields.io/cocoapods/p/JustLog.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
+[![Version](https://img.shields.io/cocoapods/v/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
+[![License](https://img.shields.io/cocoapods/l/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
+[![Platform](https://img.shields.io/cocoapods/p/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
 
 
 JustPersist is the easiest and safest way to do persistence on iOS with Core Data support out of the box. It also allows you to migrate to any other persistence framework with minimal effort.
