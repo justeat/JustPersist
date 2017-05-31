@@ -91,7 +91,7 @@ extension DataStoreReadWriteAccessor {
      */
     public func create<ItemType: MutableDataStoreItem>() throws -> ItemType {
         guard let item = createItem(ofMutableType: ItemType.self) as? ItemType else {
-            throw DataStoreError.couldNotCreateItemOfType(ItemType)
+            throw DataStoreError.couldNotCreateItemOfType(ItemType.self)
         }
         return item
     }

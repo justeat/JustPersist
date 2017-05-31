@@ -84,6 +84,7 @@ public protocol DataStoreReadWriteAccessor: DataStoreReadAccessor {
      
      - returns: Returns true is successfully inserted, false if there was an issue
      */
+    @discardableResult
     func insert(_ item: MutableDataStoreItem) -> Bool
     
     /**
@@ -93,6 +94,7 @@ public protocol DataStoreReadWriteAccessor: DataStoreReadAccessor {
      
      - returns: Returns true is successfully deleted, false if there was an issue
      */
+    @discardableResult
     func delete(item: MutableDataStoreItem) -> Bool
     
     /**
@@ -102,6 +104,7 @@ public protocol DataStoreReadWriteAccessor: DataStoreReadAccessor {
      
      - returns: Returns true is successfully all items were successfully deleted, false if there was an issue
      */
+    @discardableResult
     func deleteAllItems(ofMutableType itemType: MutableDataStoreItem.Type) -> Bool
     
     // MARK: Mutable Version of Immutable Item

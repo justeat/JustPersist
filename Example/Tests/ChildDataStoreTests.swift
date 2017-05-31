@@ -65,7 +65,7 @@ class ChildDataStoreTests: XCTestCase {
         
         // Add one order to child data store
         childDataStore.writeSync { accessor in
-            let _ = accessor.createItem(ofMutableType: TestEntity.self)
+            _ = accessor.createItem(ofMutableType: TestEntity.self)
             //_ = try! accessor.create() as TestEntity // this swift magic is not fully supported apparently, yet
         }
         
