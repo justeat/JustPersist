@@ -1,9 +1,9 @@
 PODS:
-  - JustPersist/Core (0.1.0)
-  - JustPersist/MagicalRecord (0.1.0):
+  - JustPersist/Core (1.0.1)
+  - JustPersist/MagicalRecord (1.0.1):
     - JustPersist/Core
     - MagicalRecord (~> 2.3.2)
-  - JustPersist/Skopelos (0.1.0):
+  - JustPersist/Skopelos (1.0.1):
     - JustPersist/Core
     - Skopelos (= 2.0.0)
   - MagicalRecord (2.3.2):
@@ -17,13 +17,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   JustPersist:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  JustPersist: 4c068b71cebb4019bb1e33604c748bc28ce0a43d
+  JustPersist: 0346decb6cd875b432365c2ca839de7ff9e0dabc
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Skopelos: c35baf7b0c593a6889d121090eaf31a484ecc8f2
 
-PODFILE CHECKSUM: e8d4ffe1902a2a2c93c5cda57466ccda41571eee
+PODFILE CHECKSUM: b99881e9785c7f31dda9fd2f24bc7c8a01141fce
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

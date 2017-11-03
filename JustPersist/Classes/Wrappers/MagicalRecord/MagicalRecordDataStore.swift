@@ -20,8 +20,8 @@ open class MagicalRecordDataStore: NSObject {
     
     let errorDomain = "com.just-eat.MagicalRecordDataStore.Error"
     
-    fileprivate var setupBlock: (Void) -> Void
-    fileprivate var tearDownBlock: (Void) -> Void
+    fileprivate var setupBlock: () -> Void
+    fileprivate var tearDownBlock: () -> Void
     fileprivate var isSetup = false
     fileprivate var isExecutingWriting = false
     
@@ -57,7 +57,7 @@ open class MagicalRecordDataStore: NSObject {
             }, errorHandler: errorHandler)
     }
     
-    public init(setupBlock: @escaping (Void) -> Void, tearDownBlock: @escaping (Void) -> Void, errorHandler: DataStoreErrorHandler? = nil) {
+    public init(setupBlock: @escaping () -> Void, tearDownBlock: @escaping () -> Void, errorHandler: DataStoreErrorHandler? = nil) {
         self.setupBlock = setupBlock
         self.tearDownBlock = tearDownBlock
         self.errorHandler = errorHandler

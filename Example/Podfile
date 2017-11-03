@@ -1,4 +1,3 @@
-source 'git@github.com:justeat/PodSpecs.iOS.UK.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
