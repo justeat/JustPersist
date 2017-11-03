@@ -1,6 +1,0 @@
-framework module JustPersist {
-  umbrella header "JustPersist-umbrella.h"
-
-  export *
-  module * { export * }
-}
