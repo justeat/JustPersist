@@ -897,7 +897,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5F8015FF5A57E45733803AB /* Pods-JustPersist_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustPersist/Info.plist;
@@ -913,7 +912,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90540AB3B8C1DA3512EBC606 /* Pods-JustPersist_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustPersist/Info.plist;

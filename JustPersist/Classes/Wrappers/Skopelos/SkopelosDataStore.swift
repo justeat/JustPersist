@@ -79,7 +79,7 @@ extension SkopelosDataStore: DataStore {
         
         precondition(isSetup, "You must setup the data store before trying to read from it")
         
-        skopelos.read { context in
+        _ = skopelos.read { context in
             let readAccessor = CoreDataAccessor(withContext: context)
             
             if let errorHandler = self.errorHandler {
@@ -105,7 +105,7 @@ extension SkopelosDataStore: DataStore {
         
         isExecutingWriting = true
         
-        skopelos.writeSync { context in
+        _ = skopelos.writeSync { context in
             let writeAccessor = CoreDataAccessor(withContext: context)
             
             if let errorHandler = self.errorHandler {
@@ -152,7 +152,7 @@ extension SkopelosDataStore: DataStore {
     
     public func makeChildDataStore() -> ChildDataStore {
         var mainContext: NSManagedObjectContext! = nil
-        skopelos.read { context in
+        _ = skopelos.read { context in
             mainContext = context
         }
         return ChildCoreDataStore(parentDataStore: self, parentContext: mainContext, errorHandler: errorHandler)
