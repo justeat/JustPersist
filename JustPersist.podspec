@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JustPersist'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'JustPersist is the easiest and safest way to do persistence on iOS with Core Data support out of the box. It also allows you to migrate to any other persistence framework with minimal effort.'
 
   s.description      = "<<-DESC
@@ -36,7 +36,7 @@ At it's core, JustPersist is a persistence layer with a clear and simple interfa
 
   s.subspec 'Skopelos' do |ss|
     ss.dependency 'JustPersist/Core'
-    ss.dependency 'Skopelos', '2.0.0'
+    ss.dependency 'Skopelos', '~> 2.0.0'
     ss.source_files = 'JustPersist/Classes/Wrappers/Skopelos/*'
   end
 
