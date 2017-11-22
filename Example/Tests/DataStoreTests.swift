@@ -105,55 +105,55 @@ class DataStoreTests: XCTestCase {
     // MARK: Readings
     
     func testReadInSkopelosDataStoreFromMainThreadIsSyncOnMainThread() {
-        testReadCalledFromMainThreadIsSyncOnMainThread(magicalRecordDataStore)
+        testReadCalledFromMainThreadIsSyncOnMainThread(skopelosDataStore)
     }
     
     func testReadInSkopelosDataStoreFromBkgThreadIsSyncOnMainThread() {
-        testReadCalledFromBkgThreadIsSyncOnMainThread(magicalRecordDataStore)
+        testReadCalledFromBkgThreadIsSyncOnMainThread(skopelosDataStore)
     }
     
-    func testReadInSkopelosChilDataStoreFromMainThreadIsSyncOnMainThread() {
-        testReadCalledFromMainThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+    func testReadInSkopelosChildDataStoreFromMainThreadIsSyncOnMainThread() {
+        testReadCalledFromMainThreadIsSyncOnMainThread(skopelosChildDataStore)
     }
     
     func testReadInSkopelosChildDataStoreFromBkgThreadIsSyncOnMainThread() {
-        testReadCalledFromBkgThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+        testReadCalledFromBkgThreadIsSyncOnMainThread(skopelosChildDataStore)
     }
     
     // MARK: Writings Sync
     
     func testWriteSyncInSkopelosDataStoreFromMainThreadIsSyncOnMainThread() {
-        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(magicalRecordDataStore)
+        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(skopelosDataStore)
     }
     
     func testWriteSyncInSkopelosDataStoreFromBkgThreadIsSyncOnMainThread() {
-        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(magicalRecordDataStore)
+        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(skopelosDataStore)
     }
     
     func testWriteSyncInSkopelosChildDataStoreFromMainThreadIsSyncOnMainThread() {
-        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(magicalRecordChildDataStore)
+        testWriteSyncCalledFromMainThreadIsSyncOnMainThread(skopelosChildDataStore)
     }
     
     func testWriteSyncInSkopelosChildDataStoreFromBkgThreadIsSyncOnMainThread() {
-        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(magicalRecordChildDataStore)
+        testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(skopelosChildDataStore)
     }
     
     // MARK: Writings Async
     
     func testWriteAsyncInSkopelosDataStoreFromMainThreadIsAsyncOnBackgroundThread() {
-        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(skopelosDataStore)
     }
     
     func testWriteAsyncInSkopelosDataStoreFromBkgThreadIsAsyncOnBackgroundThread() {
-        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(skopelosDataStore)
     }
     
     func testWriteAsyncInSkopelosChildDataStoreFromMainThreadIsAsyncOnBackgroundThread() {
-        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordChildDataStore)
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(skopelosChildDataStore)
     }
     
     func testWriteAsyncInSkopelosChildDataStoreFromBkgThreadIsAsyncOnBackgroundThread() {
-        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(magicalRecordChildDataStore)
+        testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(skopelosChildDataStore)
     }
     
     // MARK: Private
