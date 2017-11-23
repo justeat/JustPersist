@@ -24,7 +24,6 @@ open class SkopelosDataStore: NSObject {
     fileprivate var securityApplicationGroupIdentifier: String?
     fileprivate var storeType: StoreType
     fileprivate var isSetup = false
-    fileprivate var isExecutingWriting = false
     open var errorHandler: DataStoreErrorHandler?
     
     public init(sqliteStack modelURL: URL, securityApplicationGroupIdentifier: String?, errorHandler: DataStoreErrorHandler? = nil) {
@@ -98,13 +97,6 @@ extension SkopelosDataStore: DataStore {
         
         precondition(isSetup, "You must setup the data store before trying to write to it")
         
-        if isExecutingWriting {
-            // stop here
-            print("YOLO! Already a writing happening in this data store")
-        }
-        
-        isExecutingWriting = true
-        
         _ = skopelos.writeSync { context in
             let writeAccessor = CoreDataAccessor(withContext: context)
             
@@ -118,20 +110,11 @@ extension SkopelosDataStore: DataStore {
             }
             writeBlock(writeAccessor)
         }
-        
-        isExecutingWriting = false
     }
     
     public func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void) {
         
         precondition(isSetup, "You must setup the data store before trying to write to it")
-        
-        if isExecutingWriting {
-            // stop here
-            print("YOLO! Already a writing happening in this data store")
-        }
-        
-        isExecutingWriting = true
         
         skopelos.writeAsync { context in
             let writeAccessor = CoreDataAccessor(withContext: context)
@@ -146,8 +129,6 @@ extension SkopelosDataStore: DataStore {
             }
             writeBlock(writeAccessor)
         }
-        
-        isExecutingWriting = false
     }
     
     public func makeChildDataStore() -> ChildDataStore {

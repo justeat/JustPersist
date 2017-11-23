@@ -23,7 +23,6 @@ open class MagicalRecordDataStore: NSObject {
     fileprivate var setupBlock: () -> Void
     fileprivate var tearDownBlock: () -> Void
     fileprivate var isSetup = false
-    fileprivate var isExecutingWriting = false
     
     open static func stack(_ dataModelFileName: NSString, securityApplicationGroupIdentifier: NSString, errorHandler: DataStoreErrorHandler? = nil) -> MagicalRecordDataStore {
         
@@ -77,13 +76,13 @@ open class MagicalRecordDataStore: NSObject {
     
     fileprivate var readAccessor: CoreDataAccessor!
     
-    fileprivate func readWriteAccessor() -> CoreDataAccessor {
+    lazy fileprivate var readWriteAccessor: CoreDataAccessor = {
         
         let privateContext = NSManagedObjectContext.mr_context(withParent: NSManagedObjectContext.mr_default())
         privateContext.shouldDeleteInaccessibleFaults = false
         let accessor = CoreDataAccessor(withContext: privateContext)
         
-        if let errorHandler = errorHandler {
+        if let errorHandler = self.errorHandler {
             
             accessor.errorHandler = { error in
                 DispatchQueue.main.async {
@@ -92,7 +91,7 @@ open class MagicalRecordDataStore: NSObject {
             }
         }
         return accessor
-    }
+    }()
 }
 
 // MARK: - DataStore
@@ -134,40 +133,22 @@ extension MagicalRecordDataStore: DataStore {
         
         precondition(isSetup, "You must setup the data store before trying to write to it")
         
-        if isExecutingWriting {
-            // stop here
-            print("YOLO! Already a writing happening in this data store")
-        }
-        
-        isExecutingWriting = true
-        
-        let accessor = readWriteAccessor()
+        let accessor = readWriteAccessor
         accessor.context.performAndWait {
             writeBlock(accessor)
             accessor.context.mr_saveToPersistentStoreAndWait() // Saves context and parent contexts all the way up to the persistent store.
         }
-        
-        isExecutingWriting = false
     }
     
     public func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void) {
         
         precondition(isSetup, "You must setup the data store before trying to write to it")
         
-        if isExecutingWriting {
-            // stop here
-            print("YOLO! Already a writing happening in this data store")
-        }
-        
-        isExecutingWriting = true
-        
-        let accessor = readWriteAccessor()
+        let accessor = readWriteAccessor
         accessor.context.perform {
             writeBlock(accessor)
             accessor.context.mr_saveToPersistentStoreAndWait() // Saves context and parent contexts all the way up to the persistent store.
         }
-        
-        isExecutingWriting = false
     }
     
     public func makeChildDataStore() -> ChildDataStore {
