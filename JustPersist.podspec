@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JustPersist'
-  s.version          = '1.0.2'
+  s.version          = '1.1.0'
   s.summary          = 'JustPersist is the easiest and safest way to do persistence on iOS with Core Data support out of the box. It also allows you to migrate to any other persistence framework with minimal effort.'
 
   s.description      = "<<-DESC
