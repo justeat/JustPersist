@@ -8,7 +8,7 @@
 
 import CoreData
 
-@objc (JECoreDataAccessor)
+@objcMembers
 class CoreDataAccessor: NSObject {
     
     let errorDomain = "com.just-eat.CoreDataAccessor.Error"

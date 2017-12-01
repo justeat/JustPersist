@@ -10,11 +10,12 @@ import Foundation
 import CoreData
 import Skopelos
 
+@objc
 protocol SkopelosClientDelegate: class {
     func handle(_ error: NSError) -> Void
 }
 
-@objc(JESkopelosClient)
+@objcMembers
 class SkopelosClient: Skopelos {
     
     weak var delegate: SkopelosClientDelegate?
