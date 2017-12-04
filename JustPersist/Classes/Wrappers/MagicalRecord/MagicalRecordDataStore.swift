@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 import MagicalRecord
 
-@objc(JEMagicalRecordDataStore)
+@objcMembers
 open class MagicalRecordDataStore: NSObject {
     
     enum ErrorCode: Int {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc(JEDataStoreRequest)
+@objcMembers
 open class DataStoreRequest: NSObject {
     
     open let itemType: DataStoreItem.Type

@@ -8,12 +8,12 @@
 
 import Foundation
 
-@objc(JEDataStoreAccessor)
+@objc
 public protocol DataStoreAccessor: class {
     
 }
 
-@objc(JEDataStoreReadAccessor)
+@objc
 public protocol DataStoreReadAccessor: DataStoreAccessor {
     
     /**
@@ -45,7 +45,7 @@ public protocol DataStoreReadAccessor: DataStoreAccessor {
     
 }
 
-@objc(JEDataStoreReadWriteAccessor)
+@objc
 public protocol DataStoreReadWriteAccessor: DataStoreReadAccessor {
     
     /**

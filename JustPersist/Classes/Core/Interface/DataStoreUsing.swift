@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc(JEDataStoreUsing)
+@objc
 protocol DataStoreUsing {
     
     var dataStore: DataStore { get set }

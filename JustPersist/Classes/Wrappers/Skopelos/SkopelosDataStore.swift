@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import Skopelos
 
-@objc(JESkopelosDataStore)
+@objcMembers
 open class SkopelosDataStore: NSObject {
     
     enum ErrorCode: Int {

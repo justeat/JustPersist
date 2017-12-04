@@ -8,7 +8,7 @@
 
 import CoreData
 
-@objc(JEChildCoreDataStore)
+@objcMembers
 class ChildCoreDataStore: NSObject {
     
     enum ErrorCode: Int {

@@ -6,8 +6,8 @@
 //  Copyright © 2016 JUST EAT. All rights reserved.
 //
 
-@objc(JEDataStoreItem)
-public protocol DataStoreItem {
+@objc
+public protocol DataStoreItem: class {
     
     /// Key used by the dataStore to identify items of this type
     static var itemTypeKey: String { get }
@@ -25,7 +25,7 @@ public protocol DataStoreItem {
     func value(forKeyPath keyPath: String) -> Any?
 }
 
-@objc(JEMutableDataStoreItem)
+@objc
 public protocol MutableDataStoreItem: DataStoreItem {
     
     /**

@@ -10,7 +10,7 @@ import Foundation
 
 public typealias DataStoreErrorHandler = (NSError) -> Void
 
-@objc(JEDataStore)
+@objc
 public protocol DataStore: class {
     
     var errorHandler: DataStoreErrorHandler? { get set }
@@ -67,7 +67,7 @@ public protocol DataStore: class {
     func merge(_ childDataStore: ChildDataStore)
 }
 
-@objc(JEChildDataStore)
+@objc
 public protocol ChildDataStore: DataStore {
     
     var parent: DataStore { get }
