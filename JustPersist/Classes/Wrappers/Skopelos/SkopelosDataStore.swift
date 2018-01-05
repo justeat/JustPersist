@@ -23,20 +23,23 @@ open class SkopelosDataStore: NSObject {
     fileprivate var modelURL: URL
     fileprivate var securityApplicationGroupIdentifier: String?
     fileprivate var storeType: StoreType
+    fileprivate var allowsConcurrentWritings: Bool
     fileprivate var isSetup = false
     open var errorHandler: DataStoreErrorHandler?
     
-    public init(sqliteStack modelURL: URL, securityApplicationGroupIdentifier: String?, errorHandler: DataStoreErrorHandler? = nil) {
+    public init(sqliteStack modelURL: URL, securityApplicationGroupIdentifier: String?, allowsConcurrentWritings: Bool = true, errorHandler: DataStoreErrorHandler? = nil) {
         storeType = .sqlite
         self.modelURL = modelURL
         self.securityApplicationGroupIdentifier = securityApplicationGroupIdentifier
+        self.allowsConcurrentWritings = allowsConcurrentWritings
         self.errorHandler = errorHandler
         super.init()
     }
     
-    public init(inMemoryStack modelURL: URL, errorHandler: DataStoreErrorHandler? = nil) {
+    public init(inMemoryStack modelURL: URL, allowsConcurrentWritings: Bool = true, errorHandler: DataStoreErrorHandler? = nil) {
         storeType = .inMemory
         self.modelURL = modelURL
+        self.allowsConcurrentWritings = allowsConcurrentWritings
         self.errorHandler = errorHandler
         super.init()
     }
@@ -59,9 +62,9 @@ extension SkopelosDataStore: DataStore {
         guard !isSetup else { return }
         switch storeType {
         case .sqlite:
-            skopelos = SkopelosClient(sqliteStack: modelURL, securityApplicationGroupIdentifier: securityApplicationGroupIdentifier)
+            skopelos = SkopelosClient(sqliteStack: modelURL, securityApplicationGroupIdentifier: securityApplicationGroupIdentifier, allowsConcurrentWritings: allowsConcurrentWritings)
         case .inMemory:
-            skopelos = SkopelosClient(inMemoryStack: modelURL)
+            skopelos = SkopelosClient(inMemoryStack: modelURL, allowsConcurrentWritings: allowsConcurrentWritings)
         }
         skopelos.delegate = self
         isSetup = true
