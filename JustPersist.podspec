@@ -36,7 +36,7 @@ At it's core, JustPersist is a persistence layer with a clear and simple interfa
 
   s.subspec 'Skopelos' do |ss|
     ss.dependency 'JustPersist/Core'
-    ss.dependency 'Skopelos', '~> 2.1.0'
+    ss.dependency 'Skopelos', '~> 2.2.0'
     ss.source_files = 'JustPersist/Classes/Wrappers/Skopelos/*'
   end
 

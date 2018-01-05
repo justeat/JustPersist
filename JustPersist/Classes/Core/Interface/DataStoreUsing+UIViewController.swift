@@ -11,7 +11,7 @@ import Foundation
 extension DataStoreUsing where Self: UIViewController {
     
     func passDataStore(alongSegue segue: UIStoryboardSegue) {
-        guard var dataStoreRecipiant = segue.destination as? DataStoreUsing else { return }
+        guard let dataStoreRecipiant = segue.destination as? DataStoreUsing else { return }
         dataStoreRecipiant.dataStore = dataStore
     }
 }
