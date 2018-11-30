@@ -11,7 +11,7 @@ import Foundation
 @objcMembers
 open class DataStoreRequest: NSObject {
     
-    open let itemType: DataStoreItem.Type
+    public let itemType: DataStoreItem.Type
     open var predicate: NSPredicate?
     open var sortDescriptors: [NSSortDescriptor]?
     open var offset: Int?

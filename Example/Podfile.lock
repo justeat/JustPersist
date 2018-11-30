@@ -1,29 +1,34 @@
 PODS:
-  - JustPersist/Core (2.1.0)
-  - JustPersist/MagicalRecord (2.1.0):
+  - JustPersist/Core (2.2.0)
+  - JustPersist/MagicalRecord (2.2.0):
     - JustPersist/Core
     - MagicalRecord (~> 2.3.2)
-  - JustPersist/Skopelos (2.1.0):
+  - JustPersist/Skopelos (2.2.0):
     - JustPersist/Core
-    - Skopelos (~> 2.2.0)
+    - Skopelos (~> 2.3.0)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
-  - Skopelos (2.2.0)
+  - Skopelos (2.3.0)
 
 DEPENDENCIES:
   - JustPersist/MagicalRecord (from `../`)
   - JustPersist/Skopelos (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MagicalRecord
+    - Skopelos
+
 EXTERNAL SOURCES:
   JustPersist:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  JustPersist: 299cba6bc2d790b88f8989ac3842f251b5fc716d
+  JustPersist: 435a67ae194176d07083ea83a1e7459350a34b2c
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
-  Skopelos: ec662f64235d2ff2589d9c23719b93fdbbbdbe64
+  Skopelos: 14729dc95d2764e4364015e2c1b075c49d396963
 
-PODFILE CHECKSUM: b99881e9785c7f31dda9fd2f24bc7c8a01141fce
+PODFILE CHECKSUM: acfed7b36ff8e44a0079cefd995ae918e8f70565
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
