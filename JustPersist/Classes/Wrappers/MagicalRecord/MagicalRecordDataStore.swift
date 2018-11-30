@@ -24,7 +24,7 @@ open class MagicalRecordDataStore: NSObject {
     fileprivate var tearDownBlock: () -> Void
     fileprivate var isSetup = false
     
-    open static func stack(_ dataModelFileName: NSString, securityApplicationGroupIdentifier: NSString, errorHandler: DataStoreErrorHandler? = nil) -> MagicalRecordDataStore {
+    public static func stack(_ dataModelFileName: NSString, securityApplicationGroupIdentifier: NSString, errorHandler: DataStoreErrorHandler? = nil) -> MagicalRecordDataStore {
         
         return MagicalRecordDataStore(setupBlock: {
             
@@ -40,7 +40,7 @@ open class MagicalRecordDataStore: NSObject {
             }, errorHandler: errorHandler)
     }
     
-    open static func inMemoryStack(_ errorHandler: DataStoreErrorHandler? = nil) -> MagicalRecordDataStore {
+    public static func inMemoryStack(_ errorHandler: DataStoreErrorHandler? = nil) -> MagicalRecordDataStore {
         
         return MagicalRecordDataStore(setupBlock: {
             
