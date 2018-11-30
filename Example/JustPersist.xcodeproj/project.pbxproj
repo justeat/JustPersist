@@ -116,7 +116,7 @@
 		A5F8015FF5A57E45733803AB /* Pods-JustPersist_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPersist_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustPersist_Example/Pods-JustPersist_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AF38171A5872E044B8335CA1 /* Pods_JustPersist_watchOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPersist_watchOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C070FA0DC07A0DD7B51D7FD9 /* Pods-JustPersist_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPersist_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustPersist_Tests/Pods-JustPersist_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C7B2D292D5D318A7A8B05DC3 /* JustPersist.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JustPersist.podspec; path = ../JustPersist.podspec; sourceTree = "<group>"; };
+		C7B2D292D5D318A7A8B05DC3 /* JustPersist.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JustPersist.podspec; path = ../JustPersist.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FD8A3BF5210C9B92A6361B3D /* Pods-JustPersist_watchOS_Example Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPersist_watchOS_Example Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustPersist_watchOS_Example Extension/Pods-JustPersist_watchOS_Example Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,8 +317,6 @@
 				4F35A6031DC1039C0043CF4A /* Sources */,
 				4F35A6041DC1039C0043CF4A /* Frameworks */,
 				4F35A6051DC1039C0043CF4A /* Resources */,
-				D619FCBE92D96ACBDD99E0EE /* [CP] Embed Pods Frameworks */,
-				4439CBBD2E434EB658245F34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,7 +336,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				1ACF95D3C1053A1EB52232DC /* [CP] Embed Pods Frameworks */,
-				8491E2E77F34BEC77E5C56F5 /* [CP] Copy Pods Resources */,
 				4F35A6211DC1039C0043CF4A /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -359,8 +356,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				9F7EF2E3EC158814195A49DA /* [CP] Embed Pods Frameworks */,
-				09A51FA25652ABECFFF99BA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -465,21 +460,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09A51FA25652ABECFFF99BA0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_Tests/Pods-JustPersist_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1ACF95D3C1053A1EB52232DC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,21 +482,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_Example/Pods-JustPersist_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4439CBBD2E434EB658245F34 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_watchOS_Example Extension/Pods-JustPersist_watchOS_Example Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		45A324DCEEF202F5E33F03AD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -535,36 +500,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8491E2E77F34BEC77E5C56F5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_Example/Pods-JustPersist_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F7EF2E3EC158814195A49DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_Tests/Pods-JustPersist_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A9A421DD7241B0398AAC8F72 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -581,21 +516,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D619FCBE92D96ACBDD99E0EE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_watchOS_Example Extension/Pods-JustPersist_watchOS_Example Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE4734F7A34B194AB3355F52 /* [CP] Check Pods Manifest.lock */ = {
@@ -833,7 +753,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -880,7 +800,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
