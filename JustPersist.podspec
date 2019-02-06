@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JustPersist'
-  s.version          = '2.2.0'
+  s.version          = '2.3.0'
   s.summary          = 'JustPersist is the easiest and safest way to do persistence on iOS with Core Data support out of the box. It also allows you to migrate to any other persistence framework with minimal effort.'
 
   s.description      = "<<-DESC
@@ -19,7 +19,7 @@ At it's core, JustPersist is a persistence layer with a clear and simple interfa
 
   s.homepage         = 'https://github.com/justeat/JustPersist'
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
-  s.authors          = { 'Just Eat iOS team' => 'justeat.ios.team@gmail.com', 'Alberto De Bortoli' => 'alberto.debortoli@just-eat.com', 'Keith Moon' => 'keith.moon@just-eat.com' }
+  s.authors          = { 'Just Eat iOS team' => 'justeat.ios.team@gmail.com', 'Alberto De Bortoli' => 'alberto.debortoli@just-eat.com', 'Keith Moon' => 'keith.moon@just-eat.com', 'Luigi Parpinel' => 'luigi.parpinel@just-eat.com' }
 
   s.source           = { :git => 'https://github.com/justeat/JustPersist.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/justeat_tech'
