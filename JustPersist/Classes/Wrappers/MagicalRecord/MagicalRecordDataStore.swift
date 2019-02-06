@@ -151,6 +151,7 @@ extension MagicalRecordDataStore: DataStore {
         accessor.context.perform {
             writeBlock(accessor)
             accessor.context.mr_saveToPersistentStoreAndWait() // Saves context and parent contexts all the way up to the persistent store.
+            completion?()
         }
     }
 
