@@ -168,6 +168,28 @@ extension CoreDataAccessor: DataStoreReadWriteAccessor {
         return true
     }
     
+    func batchDeleteAllItems(ofMutableTypes itemTypes: [MutableDataStoreItem.Type]) {
+        
+        var changedManagedObjectsIds: [NSManagedObjectID] = []
+        
+        for itemType in itemTypes {
+            let fetchRequest = DataStoreRequest(itemType: itemType).fetchRequest()
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            deleteRequest.resultType = .resultTypeObjectIDs
+            
+            do {
+                let result = try context.execute(deleteRequest) as? NSBatchDeleteResult
+                let deletedObjectsIds = result?.result as? [NSManagedObjectID] ?? []
+                changedManagedObjectsIds.append(contentsOf: deletedObjectsIds)
+            } catch {
+                assert(false, "This should be a programmatic error")
+            }
+        }
+        
+        let changes = [NSDeletedObjectsKey: changedManagedObjectsIds]
+        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [context])
+    }
+    
     func mutableVersion(ofItem item: DataStoreItem) -> MutableDataStoreItem? {
         
         guard let object = item as? NSManagedObject, let objectID = item.uniqueToken as? NSManagedObjectID else {
