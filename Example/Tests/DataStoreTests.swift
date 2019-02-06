@@ -156,6 +156,15 @@ class DataStoreTests: XCTestCase {
         testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(skopelosChildDataStore)
     }
     
+    // MARK: Writings Async - completion block
+    func testWriteAsyncInMagicalRecordCallsCompletion() {
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+    }
+
+    func testWriteAsyncInSkopelosCallsCompletion() {
+        testWriteAsyncCallsCompletion(skopelosDataStore)
+    }
+    
     // MARK: Private
     
     fileprivate func testReadCalledFromMainThreadIsSyncOnMainThread(_ dataStore: DataStore) {
@@ -215,7 +224,36 @@ class DataStoreTests: XCTestCase {
         //XCTAssertEqual(stepSequence[1], 0)
         
     }
-    
+
+    fileprivate func testWriteAsyncCallsCompletion(_ dataStore: DataStore) {
+        
+        let asyncExpectation = expectation(description: "thread safety expectation")
+        let completionExpectation = expectation(description: "completion expectation")
+        
+        /**
+         * stepSuquence logic is commented-out as the execution of the block (ultimately a 'performBlock'/'perform' in CoreData
+         * is not guaranteed to happen on a dispatched block and might be executed before the line following the block
+         */
+        //var stepSequence: [Int] = []
+        let writeBlock: (DataStoreReadWriteAccessor) -> Void = { accessor in
+            
+            XCTAssertFalse(Thread.current.isMainThread)
+            //stepSequence.append(0)
+            asyncExpectation.fulfill()
+        }
+        
+        dataStore.writeAsync(writeBlock) {
+            completionExpectation.fulfill()
+        }
+        
+        //stepSequence.append(1)
+        wait(for: [asyncExpectation, completionExpectation], timeout: DataStoreTestsConsts.UnitTestTimeout)
+        
+        //XCTAssertEqual(stepSequence[0], 1)
+        //XCTAssertEqual(stepSequence[1], 0)
+        
+    }
+
     fileprivate func testReadCalledFromBkgThreadIsSyncOnMainThread(_ dataStore: DataStore) {
         
         let asyncExpectation = expectation(description: "thread safety expectation")
