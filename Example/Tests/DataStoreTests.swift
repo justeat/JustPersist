@@ -157,6 +157,7 @@ class DataStoreTests: XCTestCase {
     }
     
     // MARK: Writings Async - completion block
+    
     func testWriteAsyncInMagicalRecordCallsCompletion() {
         testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
     }
@@ -230,15 +231,9 @@ class DataStoreTests: XCTestCase {
         let asyncExpectation = expectation(description: "thread safety expectation")
         let completionExpectation = expectation(description: "completion expectation")
         
-        /**
-         * stepSuquence logic is commented-out as the execution of the block (ultimately a 'performBlock'/'perform' in CoreData
-         * is not guaranteed to happen on a dispatched block and might be executed before the line following the block
-         */
-        //var stepSequence: [Int] = []
         let writeBlock: (DataStoreReadWriteAccessor) -> Void = { accessor in
             
             XCTAssertFalse(Thread.current.isMainThread)
-            //stepSequence.append(0)
             asyncExpectation.fulfill()
         }
         
@@ -246,12 +241,7 @@ class DataStoreTests: XCTestCase {
             completionExpectation.fulfill()
         }
         
-        //stepSequence.append(1)
-        wait(for: [asyncExpectation, completionExpectation], timeout: DataStoreTestsConsts.UnitTestTimeout)
-        
-        //XCTAssertEqual(stepSequence[0], 1)
-        //XCTAssertEqual(stepSequence[1], 0)
-        
+        wait(for: [asyncExpectation, completionExpectation], timeout: DataStoreTestsConsts.UnitTestTimeout)        
     }
 
     fileprivate func testReadCalledFromBkgThreadIsSyncOnMainThread(_ dataStore: DataStore) {
