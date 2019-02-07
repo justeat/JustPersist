@@ -16,6 +16,7 @@ class CoreDataAccessor: NSObject {
     enum ErrorCode: Int {
         case itemIsNotFromAccessorsDataStore
         case itemIsNotCompatibleWithAccessorsDataStore
+        case itemBatchDeletionFailsWithAccessorsDataStore
     }
     
     enum ErrorUserInfoKey: String {
@@ -182,7 +183,7 @@ extension CoreDataAccessor: DataStoreReadWriteAccessor {
                 let deletedObjectsIds = result?.result as? [NSManagedObjectID] ?? []
                 changedManagedObjectsIds.append(contentsOf: deletedObjectsIds)
             } catch {
-                assert(false, "This should be a programmatic error")
+                reportError(withCode: ErrorCode.itemBatchDeletionFailsWithAccessorsDataStore, andRelevantItemType: itemType)
             }
         }
         
