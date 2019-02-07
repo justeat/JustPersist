@@ -141,16 +141,21 @@ extension MagicalRecordDataStore: DataStore {
     }
     
     public func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void) {
-        
+        writeAsync(writeBlock, completion: nil)
+    }
+    
+    public func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void, completion: (() -> Void)?) {
         precondition(isSetup, "You must setup the data store before trying to write to it")
         
         let accessor = readWriteAccessor
         accessor.context.perform {
             writeBlock(accessor)
             accessor.context.mr_saveToPersistentStoreAndWait() // Saves context and parent contexts all the way up to the persistent store.
+            completion?()
         }
     }
-    
+
+
     public func makeChildDataStore() -> ChildDataStore {
         return ChildCoreDataStore(parentDataStore: self, parentContext: readAccessor.context, errorHandler: errorHandler)
     }

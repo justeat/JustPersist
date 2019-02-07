@@ -99,13 +99,17 @@ extension ChildCoreDataStore: ChildDataStore {
     }
     
     func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void) {
-        
+        writeAsync(writeBlock, completion: nil)
+    }
+    
+    func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void, completion: (() -> Void)?) {
         precondition(isSetup, "You must setup the data store before trying to write to it")
         
         let accessor = readWriteAccessor()
         accessor.context.perform {
             writeBlock(accessor)
             accessor.save()
+            completion?()
         }
     }
     

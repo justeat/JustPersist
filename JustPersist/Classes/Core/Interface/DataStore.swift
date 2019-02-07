@@ -49,7 +49,15 @@ public protocol DataStore: class {
      - parameter writeBlock: Block that contains the work that will be done. The block will be passed a ```DataStoreReadWriteAccessor``` which can be used to access information in the data store that can then be modified. Once this block has finished running, the accessor will ensure that any changes that took place within the block will be persisted. It is **not** safe to perform UI work within this block.
      */
     func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void)
-    
+
+    /**
+     Write to the data store asyncronously
+     
+     - parameter writeBlock: Block that contains the work that will be done. The block will be passed a ```DataStoreReadWriteAccessor``` which can be used to access information in the data store that can then be modified. Once this block has finished running, the accessor will ensure that any changes that took place within the block will be persisted. It is **not** safe to perform UI work within this block.
+     - parameter completion: Block that is executed when the changes are saved.
+     */
+    func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void, completion: (() -> Void)?)
+
     // MARK: Child Data Store
     
     /**

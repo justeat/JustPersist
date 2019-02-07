@@ -115,8 +115,7 @@ extension SkopelosDataStore: DataStore {
         }
     }
     
-    public func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void) {
-        
+    public func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void, completion: (() -> Void)?) {
         precondition(isSetup, "You must setup the data store before trying to write to it")
         
         skopelos.writeAsync { context in
@@ -131,7 +130,12 @@ extension SkopelosDataStore: DataStore {
                 }
             }
             writeBlock(writeAccessor)
+            completion?()
         }
+    }
+
+    public func writeAsync(_ writeBlock: @escaping (DataStoreReadWriteAccessor) -> Void) {
+        writeAsync(writeBlock, completion: nil)
     }
     
     public func makeChildDataStore() -> ChildDataStore {

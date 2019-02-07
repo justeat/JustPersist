@@ -107,6 +107,13 @@ public protocol DataStoreReadWriteAccessor: DataStoreReadAccessor {
     @discardableResult
     func deleteAllItems(ofMutableType itemType: MutableDataStoreItem.Type) -> Bool
     
+    /**
+     Delete all items of the given mutable type in the data store
+     
+     - parameter [itemType]: The mutable types for which all items should be deleted
+    */
+    func batchDeleteAllItems(ofMutableTypes itemTypes: [MutableDataStoreItem.Type])
+    
     // MARK: Mutable Version of Immutable Item
     
     /**

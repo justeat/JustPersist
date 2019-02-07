@@ -156,6 +156,16 @@ class DataStoreTests: XCTestCase {
         testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(skopelosChildDataStore)
     }
     
+    // MARK: Writings Async - completion block
+    
+    func testWriteAsyncInMagicalRecordCallsCompletion() {
+        testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(magicalRecordDataStore)
+    }
+
+    func testWriteAsyncInSkopelosCallsCompletion() {
+        testWriteAsyncCallsCompletion(skopelosDataStore)
+    }
+    
     // MARK: Private
     
     fileprivate func testReadCalledFromMainThreadIsSyncOnMainThread(_ dataStore: DataStore) {
@@ -215,7 +225,25 @@ class DataStoreTests: XCTestCase {
         //XCTAssertEqual(stepSequence[1], 0)
         
     }
-    
+
+    fileprivate func testWriteAsyncCallsCompletion(_ dataStore: DataStore) {
+        
+        let asyncExpectation = expectation(description: "thread safety expectation")
+        let completionExpectation = expectation(description: "completion expectation")
+        
+        let writeBlock: (DataStoreReadWriteAccessor) -> Void = { accessor in
+            
+            XCTAssertFalse(Thread.current.isMainThread)
+            asyncExpectation.fulfill()
+        }
+        
+        dataStore.writeAsync(writeBlock) {
+            completionExpectation.fulfill()
+        }
+        
+        wait(for: [asyncExpectation, completionExpectation], timeout: DataStoreTestsConsts.UnitTestTimeout)        
+    }
+
     fileprivate func testReadCalledFromBkgThreadIsSyncOnMainThread(_ dataStore: DataStore) {
         
         let asyncExpectation = expectation(description: "thread safety expectation")
