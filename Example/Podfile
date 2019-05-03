@@ -8,12 +8,6 @@ target 'JustPersist_Example' do
   pod 'JustPersist/Skopelos', :path => '../'
   pod 'JustPersist/MagicalRecord', :path => '../'
   
-  target 'JustPersist_watchOS_Example Extension' do
-      platform :watchos, '3.0'
-      inherit! :search_paths
-      
-  end
-  
   target 'JustPersist_Tests' do
       inherit! :search_paths
       
