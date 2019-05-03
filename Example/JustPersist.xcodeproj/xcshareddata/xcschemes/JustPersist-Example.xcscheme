@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "09E4B9A839C7C0FCF8593621696E8496"
+               BlueprintIdentifier = "0E1D5C2D96243ECFA0E86C76F12A7378"
                BuildableName = "JustPersist.framework"
                BlueprintName = "JustPersist"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

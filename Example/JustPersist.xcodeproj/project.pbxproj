@@ -8,14 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E4A81BB142AD4EBB3B8C554 /* Pods_JustPersist_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E587CA47C4321685E626C0 /* Pods_JustPersist_Tests.framework */; };
-		4F35A5FF1DC1039C0043CF4A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A5FD1DC1039C0043CF4A /* Interface.storyboard */; };
-		4F35A6011DC1039C0043CF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A6001DC1039C0043CF4A /* Assets.xcassets */; };
-		4F35A6081DC1039C0043CF4A /* JustPersist_watchOS_Example Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F35A6071DC1039C0043CF4A /* JustPersist_watchOS_Example Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4F35A60F1DC1039C0043CF4A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A60E1DC1039C0043CF4A /* InterfaceController.swift */; };
-		4F35A6111DC1039C0043CF4A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A6101DC1039C0043CF4A /* ExtensionDelegate.swift */; };
-		4F35A6131DC1039C0043CF4A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A6121DC1039C0043CF4A /* NotificationController.swift */; };
-		4F35A6151DC1039C0043CF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A6141DC1039C0043CF4A /* Assets.xcassets */; };
-		4F35A6191DC1039C0043CF4A /* JustPersist_watchOS_Example.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F35A5FB1DC1039C0043CF4A /* JustPersist_watchOS_Example.app */; };
+		4F3D553F227C318D00BDF2D4 /* TestEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD52801DBF561300D9F80C /* TestEntity+CoreDataClass.swift */; };
 		4FAD52741DBEB7BE00D9F80C /* ChildDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD526A1DBEB48E00D9F80C /* ChildDataStoreTests.swift */; };
 		4FF6B4FD1DBF89330035222A /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD52641DBEB48300D9F80C /* TestModel.xcdatamodeld */; };
 		4FF6B5001DBF8F4E0035222A /* DataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6B4FE1DBF8D490035222A /* DataStoreTests.swift */; };
@@ -27,24 +20,9 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		6E321D3AB85199680DF14B3E /* Pods_JustPersist_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599B24876B37CDD555D56902 /* Pods_JustPersist_Example.framework */; };
-		F7F4F9AE8C73A0DC110A939D /* Pods_JustPersist_watchOS_Example_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D5FFF8574622812A8ADFFB /* Pods_JustPersist_watchOS_Example_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4F35A6091DC1039C0043CF4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4F35A6061DC1039C0043CF4A;
-			remoteInfo = "JustPersist_watchOS_Example Extension";
-		};
-		4F35A6171DC1039C0043CF4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4F35A5FA1DC1039C0043CF4A;
-			remoteInfo = JustPersist_watchOS_Example;
-		};
 		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
@@ -55,24 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4F35A61F1DC1039C0043CF4A /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				4F35A6081DC1039C0043CF4A /* JustPersist_watchOS_Example Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4F35A6211DC1039C0043CF4A /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				4F35A6191DC1039C0043CF4A /* JustPersist_watchOS_Example.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,11 +50,9 @@
 		24D02D2A0D8DAD77189AD199 /* Pods-JustPersist_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPersist_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustPersist_Tests/Pods-JustPersist_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		44E587CA47C4321685E626C0 /* Pods_JustPersist_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPersist_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D5FFF8574622812A8ADFFB /* Pods_JustPersist_watchOS_Example_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPersist_watchOS_Example_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F35A5FB1DC1039C0043CF4A /* JustPersist_watchOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustPersist_watchOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35A5FE1DC1039C0043CF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4F35A6001DC1039C0043CF4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F35A6021DC1039C0043CF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F35A6071DC1039C0043CF4A /* JustPersist_watchOS_Example Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "JustPersist_watchOS_Example Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35A60D1DC1039C0043CF4A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		4F35A60E1DC1039C0043CF4A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		4F35A6101DC1039C0043CF4A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -121,14 +85,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4F35A6041DC1039C0043CF4A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7F4F9AE8C73A0DC110A939D /* Pods_JustPersist_watchOS_Example_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,13 +98,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E4A81BB142AD4EBB3B8C554 /* Pods_JustPersist_Tests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		85130518B57E4328320967CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +179,6 @@
 			children = (
 				607FACD01AFB9204008FA782 /* JustPersist_Example.app */,
 				607FACE51AFB9204008FA782 /* JustPersist_Tests.xctest */,
-				4F35A5FB1DC1039C0043CF4A /* JustPersist_watchOS_Example.app */,
-				4F35A6071DC1039C0043CF4A /* JustPersist_watchOS_Example Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,42 +238,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4F35A5FA1DC1039C0043CF4A /* JustPersist_watchOS_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4F35A6201DC1039C0043CF4A /* Build configuration list for PBXNativeTarget "JustPersist_watchOS_Example" */;
-			buildPhases = (
-				4F35A5F91DC1039C0043CF4A /* Resources */,
-				4F35A61F1DC1039C0043CF4A /* Embed App Extensions */,
-				85130518B57E4328320967CC /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4F35A60A1DC1039C0043CF4A /* PBXTargetDependency */,
-			);
-			name = JustPersist_watchOS_Example;
-			productName = JustPersist_watchOS_Example;
-			productReference = 4F35A5FB1DC1039C0043CF4A /* JustPersist_watchOS_Example.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		4F35A6061DC1039C0043CF4A /* JustPersist_watchOS_Example Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4F35A61E1DC1039C0043CF4A /* Build configuration list for PBXNativeTarget "JustPersist_watchOS_Example Extension" */;
-			buildPhases = (
-				EE4734F7A34B194AB3355F52 /* [CP] Check Pods Manifest.lock */,
-				4F35A6031DC1039C0043CF4A /* Sources */,
-				4F35A6041DC1039C0043CF4A /* Frameworks */,
-				4F35A6051DC1039C0043CF4A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "JustPersist_watchOS_Example Extension";
-			productName = "JustPersist_watchOS_Example Extension";
-			productReference = 4F35A6071DC1039C0043CF4A /* JustPersist_watchOS_Example Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		607FACCF1AFB9204008FA782 /* JustPersist_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JustPersist_Example" */;
@@ -341,7 +252,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4F35A6181DC1039C0043CF4A /* PBXTargetDependency */,
 			);
 			name = JustPersist_Example;
 			productName = JustPersist;
@@ -374,20 +284,9 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					4F35A5FA1DC1039C0043CF4A = {
-						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
-					};
-					4F35A6061DC1039C0043CF4A = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZKPN288GRK;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
-					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0800;
@@ -406,6 +305,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -416,30 +316,11 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* JustPersist_Example */,
 				607FACE41AFB9204008FA782 /* JustPersist_Tests */,
-				4F35A5FA1DC1039C0043CF4A /* JustPersist_watchOS_Example */,
-				4F35A6061DC1039C0043CF4A /* JustPersist_watchOS_Example Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4F35A5F91DC1039C0043CF4A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F35A6011DC1039C0043CF4A /* Assets.xcassets in Resources */,
-				4F35A5FF1DC1039C0043CF4A /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F35A6051DC1039C0043CF4A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F35A6151DC1039C0043CF4A /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,7 +347,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_Example/Pods-JustPersist_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-JustPersist_Example/Pods-JustPersist_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JustPersist/JustPersist.framework",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/Skopelos/Skopelos.framework",
@@ -479,7 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPersist_Example/Pods-JustPersist_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustPersist_Example/Pods-JustPersist_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		45A324DCEEF202F5E33F03AD /* [CP] Check Pods Manifest.lock */ = {
@@ -518,37 +399,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE4734F7A34B194AB3355F52 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JustPersist_watchOS_Example Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4F35A6031DC1039C0043CF4A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F35A6131DC1039C0043CF4A /* NotificationController.swift in Sources */,
-				4F35A6111DC1039C0043CF4A /* ExtensionDelegate.swift in Sources */,
-				4F35A60F1DC1039C0043CF4A /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,6 +409,7 @@
 				4FF6B4FD1DBF89330035222A /* TestModel.xcdatamodeld in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				4F3D553F227C318D00BDF2D4 /* TestEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,16 +427,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4F35A60A1DC1039C0043CF4A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4F35A6061DC1039C0043CF4A /* JustPersist_watchOS_Example Extension */;
-			targetProxy = 4F35A6091DC1039C0043CF4A /* PBXContainerItemProxy */;
-		};
-		4F35A6181DC1039C0043CF4A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4F35A5FA1DC1039C0043CF4A /* JustPersist_watchOS_Example */;
-			targetProxy = 4F35A6171DC1039C0043CF4A /* PBXContainerItemProxy */;
-		};
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* JustPersist_Example */;
@@ -618,100 +462,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4F35A61A1DC1039C0043CF4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
-				IBSC_MODULE = JustPersist_watchOS_Example_Extension;
-				INFOPLIST_FILE = JustPersist_watchOS_Example/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.JustPersist-Example.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
-		};
-		4F35A61B1DC1039C0043CF4A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEVELOPMENT_TEAM = "";
-				IBSC_MODULE = JustPersist_watchOS_Example_Extension;
-				INFOPLIST_FILE = JustPersist_watchOS_Example/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.JustPersist-Example.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Release;
-		};
-		4F35A61C1DC1039C0043CF4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD8A3BF5210C9B92A6361B3D /* Pods-JustPersist_watchOS_Example Extension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = ZKPN288GRK;
-				INFOPLIST_FILE = "JustPersist_watchOS_Example Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.JustPersist-Example.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
-		};
-		4F35A61D1DC1039C0043CF4A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16C842B80DD54A89A2E43A1F /* Pods-JustPersist_watchOS_Example Extension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEVELOPMENT_TEAM = ZKPN288GRK;
-				INFOPLIST_FILE = "JustPersist_watchOS_Example Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.JustPersist-Example.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Release;
-		};
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -749,6 +504,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -760,7 +516,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -768,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -798,6 +556,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -808,7 +567,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -885,24 +645,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4F35A61E1DC1039C0043CF4A /* Build configuration list for PBXNativeTarget "JustPersist_watchOS_Example Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F35A61C1DC1039C0043CF4A /* Debug */,
-				4F35A61D1DC1039C0043CF4A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4F35A6201DC1039C0043CF4A /* Build configuration list for PBXNativeTarget "JustPersist_watchOS_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F35A61A1DC1039C0043CF4A /* Debug */,
-				4F35A61B1DC1039C0043CF4A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "JustPersist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

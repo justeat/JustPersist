@@ -20,7 +20,7 @@ class SkopelosClient: Skopelos {
     
     weak var delegate: SkopelosClientDelegate?
     
-    override func handle(error: NSError) {
+    func handle(error: NSError) {
         DispatchQueue.main.async {
             self.delegate?.handle(error)
         }

@@ -198,7 +198,6 @@ class DataStoreTests: XCTestCase {
         
         XCTAssertEqual(stepSequence[0], 0)
         XCTAssertEqual(stepSequence[1], 1)
-        
     }
     
     fileprivate func testWriteAsyncCalledFromMainThreadIsAsyncOnBackgroundThread(_ dataStore: DataStore) {
@@ -247,71 +246,48 @@ class DataStoreTests: XCTestCase {
     fileprivate func testReadCalledFromBkgThreadIsSyncOnMainThread(_ dataStore: DataStore) {
         
         let asyncExpectation = expectation(description: "thread safety expectation")
-        var stepSequence: [Int] = []
         
         DispatchQueue(label: "com.JustPersist.DataStoreTests", attributes: []).async {
             
             dataStore.read { accessor in
                 
                 XCTAssertTrue(Thread.current.isMainThread)
-                stepSequence.append(0)
+                asyncExpectation.fulfill()
             }
-            
-            stepSequence.append(1)
-            asyncExpectation.fulfill()
         }
         
         self.waitForExpectations(timeout: DataStoreTestsConsts.UnitTestTimeout) { error in }
-        
-        XCTAssertEqual(stepSequence[0], 0)
-        XCTAssertEqual(stepSequence[1], 1)
     }
     
     fileprivate func testWriteSyncCalledFromBkgThreadIsSyncOnBackgroundThread(_ dataStore: DataStore) {
         
         let asyncExpectation = expectation(description: "thread safety expectation")
-        var stepSequence: [Int] = []
         
         DispatchQueue(label: "com.JustPersist.DataStoreTests", attributes: []).async {
             
             dataStore.writeSync { accessor in
                 
                 XCTAssertFalse(Thread.current.isMainThread)
-                stepSequence.append(0)
+                asyncExpectation.fulfill()
             }
-            
-            stepSequence.append(1)
-            asyncExpectation.fulfill()
         }
         
         self.waitForExpectations(timeout: DataStoreTestsConsts.UnitTestTimeout) { error in }
-        
-        XCTAssertEqual(stepSequence[0], 0)
-        XCTAssertEqual(stepSequence[1], 1)
-        
     }
     
     fileprivate func testWriteAsyncCalledFromBkgThreadIsAsyncOnBackgroundThread(_ dataStore: DataStore) {
         
         let asyncExpectation = expectation(description: "thread safety expectation")
-        var stepSequence: [Int] = []
         
         DispatchQueue(label: "com.JustPersist.DataStoreTests", attributes: []).async {
             
             dataStore.writeAsync { accessor in
                 
                 XCTAssertFalse(Thread.current.isMainThread)
-                stepSequence.append(0)
                 asyncExpectation.fulfill()
             }
-            
-            stepSequence.append(1)
         }
         
         self.waitForExpectations(timeout: DataStoreTestsConsts.UnitTestTimeout) { error in }
-        
-        XCTAssertEqual(stepSequence[0], 1)
-        XCTAssertEqual(stepSequence[1], 0)
-        
     }
 }
