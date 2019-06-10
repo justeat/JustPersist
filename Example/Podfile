@@ -4,7 +4,8 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'JustPersist_Example' do
-    
+  
+  pod 'Skopelos', '2.4.1'
   pod 'JustPersist/Skopelos', :path => '../'
   pod 'JustPersist/MagicalRecord', :path => '../'
   

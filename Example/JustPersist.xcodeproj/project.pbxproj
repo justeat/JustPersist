@@ -32,19 +32,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		4F35A6211DC1039C0043CF4A /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		16C842B80DD54A89A2E43A1F /* Pods-JustPersist_watchOS_Example Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPersist_watchOS_Example Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustPersist_watchOS_Example Extension/Pods-JustPersist_watchOS_Example Extension.release.xcconfig"; sourceTree = "<group>"; };
 		24D02D2A0D8DAD77189AD199 /* Pods-JustPersist_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPersist_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustPersist_Tests/Pods-JustPersist_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,7 +234,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				1ACF95D3C1053A1EB52232DC /* [CP] Embed Pods Frameworks */,
-				4F35A6211DC1039C0043CF4A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
