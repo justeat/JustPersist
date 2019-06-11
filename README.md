@@ -2,13 +2,14 @@
 
 # JustPersist
 
-[![Build Status](https://app.bitrise.io/app/2a464ef14bd688df/status.svg?token=G_Hb4MMemkknV4YcCD4CsA&branch=master)](https://app.bitrise.io/app/2a464ef14bd688df)
+[![Build Status](https://travis-ci.org/justeat/JustPersist.svg?branch=master)](https://travis-ci.org/justeat/JustPersist)
 [![Version](https://img.shields.io/cocoapods/v/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
 [![License](https://img.shields.io/cocoapods/l/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
 [![Platform](https://img.shields.io/cocoapods/p/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
 
-
 JustPersist is the easiest and safest way to do persistence on iOS with Core Data support out of the box. It also allows you to migrate to any other persistence framework with minimal effort.
+
+- [Just Eat Tech blog](https://tech.just-eat.com/2017/03/02/how-to-abstract-your-persistence-layer-and-migrate-to-another-one-on-ios-with-justpersist/)
 
 # Overview
 
