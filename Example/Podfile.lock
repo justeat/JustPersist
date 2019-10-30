@@ -17,7 +17,7 @@ DEPENDENCIES:
   - Skopelos (= 2.4.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - MagicalRecord
     - Skopelos
 
@@ -26,10 +26,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JustPersist: aee0a8e8d777747b83a8060cd82faa852e7308d7
+  JustPersist: 858a69e3866dcf69c8fe5f0cf34c90285f02635d
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Skopelos: be2cd67e9215aece9fc51a3181c0f37e084a85d1
 
 PODFILE CHECKSUM: 2baa4426ce7b2c8c49df5ce52cffa163bccc94e9
 
-COCOAPODS: 1.6.2
+COCOAPODS: 1.8.4
