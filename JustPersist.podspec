@@ -1,11 +1,3 @@
-#
-# Be sure to run `pod lib lint JustPersist.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'JustPersist'
   s.version          = '2.5.2'
@@ -19,8 +11,8 @@ At it's core, JustPersist is a persistence layer with a clear and simple interfa
 
   s.homepage         = 'https://github.com/justeat/JustPersist'
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
-  s.authors          = { 'Alberto De Bortoli' => 'alberto.debortoli@just-eat.com', 'Keith Moon' => 'keith.moon@just-eat.com', 'Luigi Parpinel' => 'luigi.parpinel@just-eat.com' }
-
+  s.author           = 'Just Eat Takeaway iOS Team'
+  
   s.source           = { :git => 'https://github.com/justeat/JustPersist.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/justeat_tech'
 
