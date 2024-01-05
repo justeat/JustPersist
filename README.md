@@ -2,6 +2,8 @@
 
 # JustPersist
 
+### Warning: This library is not supported by Just Eat Takeaway anymore and therefore considered deprecated. The repository has been archived.
+
 [![Build Status](https://travis-ci.org/justeat/JustPersist.svg?branch=master)](https://travis-ci.org/justeat/JustPersist)
 [![Version](https://img.shields.io/cocoapods/v/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
 [![License](https://img.shields.io/cocoapods/l/JustPersist.svg?style=flat)](http://cocoapods.org/pods/JustPersist)
